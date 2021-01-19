@@ -35,6 +35,11 @@ namespace OnlineMovieBookingAPI.Controllers
 
             ScheduleResponse scheduleResponse = scheduleService.SaveSchedule(scheduleEntity);
 
+            if (scheduleResponse == null)
+            {
+                return BadRequest();
+            }
+
             return CreatedAtAction("GetSchedule", new { id = scheduleEntity.Id }, scheduleResponse);
         }
 

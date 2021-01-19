@@ -35,6 +35,11 @@ namespace OnlineMovieBookingAPI.Controllers
 
             HallResponse hallResponse = hallServices.SaveHall(hallEntity);
 
+            if (hallResponse == null)
+            {
+                return BadRequest();
+            }
+
             return CreatedAtAction("GetHall", new { id = hallEntity.Id }, hallResponse);
         }
 

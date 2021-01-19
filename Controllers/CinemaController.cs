@@ -52,6 +52,11 @@ namespace OnlineMovieBookingAPI.Controllers
 
             CinemaResponse cinemaResponse = cinemaServices.SaveCinema(cinemaEntity);
 
+            if (cinemaResponse == null)
+            {
+                return BadRequest();
+            }
+
             return CreatedAtAction("GetCinema", new { id = cinemaEntity.Id }, cinemaResponse);
         }
     }

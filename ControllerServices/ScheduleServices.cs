@@ -2,6 +2,7 @@
 using OnlineMovieBookingAPI.Data;
 using OnlineMovieBookingAPI.Models.EntityModels;
 using OnlineMovieBookingAPI.Models.ResponseModels;
+using System.Data.Entity.Validation;
 using System.Linq;
 
 namespace OnlineMovieBookingAPI.ControllerServices
@@ -38,7 +39,15 @@ namespace OnlineMovieBookingAPI.ControllerServices
         public ScheduleResponse SaveSchedule(ScheduleEntity scheduleEntity)
         {
             db.Schedules.Add(scheduleEntity);
-            db.SaveChanges();
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbEntityValidationException)
+            {
+                return null;
+            }
 
             ScheduleResponse scheduleResponse = Converter.ScheduleEntityToResponse(scheduleEntity);
 

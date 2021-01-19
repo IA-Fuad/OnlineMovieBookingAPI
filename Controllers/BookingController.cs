@@ -38,6 +38,11 @@ namespace OnlineMovieBookingAPI.Controllers
 
             BookingResponse bookingResponse = bookingServices.BookMovie(bookingEntity);
 
+            if (bookingResponse == null)
+            {
+                return BadRequest();
+            }
+
             return CreatedAtAction("GetBooking", new { bookingEntity.Id }, bookingResponse);
         }
     }

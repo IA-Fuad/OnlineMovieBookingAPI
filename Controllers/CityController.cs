@@ -45,6 +45,11 @@ namespace OnlineMovieBookingAPI.Controllers
 
             CityResponse cityResponse = cityServices.SaveCity(cityEntity);
 
+            if (cityResponse == null)
+            {
+                return BadRequest();
+            }
+
             return CreatedAtAction("GetCity", new { id = cityEntity.Id }, cityResponse);
         }
     }

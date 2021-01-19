@@ -2,6 +2,7 @@
 using OnlineMovieBookingAPI.Models.EntityModels;
 using OnlineMovieBookingAPI.Models.ResponseModels;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Linq;
 
@@ -38,7 +39,15 @@ namespace OnlineMovieBookingAPI.ControllerServices
         public HallResponse SaveHall(HallEntity hallEntity)
         {
             db.Halls.Add(hallEntity);
-            db.SaveChanges();
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbEntityValidationException)
+            {
+                return null;
+            }
 
             HallResponse hallResponse = Converter.HallEntityToResponse(hallEntity);
 
@@ -57,7 +66,6 @@ namespace OnlineMovieBookingAPI.ControllerServices
 
             foreach (var hallEntity in halls)
             {
-                Debug.WriteLine(hallEntity.Name);
                 db.Halls.Remove(hallEntity);
                 db.SaveChanges();
                 return;

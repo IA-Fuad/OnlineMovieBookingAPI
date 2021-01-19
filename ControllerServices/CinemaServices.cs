@@ -2,6 +2,7 @@
 using OnlineMovieBookingAPI.Models.EntityModels;
 using OnlineMovieBookingAPI.Models.ResponseModels;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 
 namespace OnlineMovieBookingAPI.ControllerServices
@@ -65,7 +66,15 @@ namespace OnlineMovieBookingAPI.ControllerServices
         public CinemaResponse SaveCinema(CinemaEntity cinemaEntity)
         {
             db.Cinemas.Add(cinemaEntity);
-            db.SaveChanges();
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbEntityValidationException)
+            {
+                return null;
+            }
 
             CinemaResponse cinemaResponse = Converter.CinemaEntityToResponse(cinemaEntity);
 

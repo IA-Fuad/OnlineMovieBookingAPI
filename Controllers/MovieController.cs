@@ -73,6 +73,11 @@ namespace OnlineMovieBookingAPI.Controllers
 
             MovieResponse movieResponse = movieServices.SaveMovie(movieEntity);
 
+            if (movieResponse == null)
+            {
+                return BadRequest();
+            }
+
             return CreatedAtAction("GetMovie", new { id = movieEntity.Id }, movieResponse);
         }
 

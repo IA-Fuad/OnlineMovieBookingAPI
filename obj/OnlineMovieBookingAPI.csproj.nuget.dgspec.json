@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Learning\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI.csproj": {}
+    "F:\\Web\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI.csproj": {}
   },
   "projects": {
-    "D:\\Learning\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI.csproj": {
+    "F:\\Web\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learning\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI.csproj",
+        "projectUniqueName": "F:\\Web\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI.csproj",
         "projectName": "OnlineMovieBookingAPI",
-        "projectPath": "D:\\Learning\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI.csproj",
-        "packagesPath": "C:\\Users\\ishtiak\\.nuget\\packages\\",
-        "outputPath": "D:\\Learning\\OnlineMovieBookingAPI\\obj\\",
+        "projectPath": "F:\\Web\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI.csproj",
+        "packagesPath": "C:\\Users\\ishti\\.nuget\\packages\\",
+        "outputPath": "F:\\Web\\OnlineMovieBookingAPI\\OnlineMovieBookingAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ishtiak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ishti\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -102,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
